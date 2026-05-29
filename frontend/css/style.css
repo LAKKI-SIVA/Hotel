@@ -1,0 +1,259 @@
+:root {
+  --bg-1: #0f1720; /* deep charcoal */
+  --bg-2: #1a2630; /* slightly lighter */
+  --text: #f6f5f3;
+  --muted: #c7c6c4;
+  --accent: #d4a017; /* gold */
+  --accent-strong: #ffc857;
+  --glass: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+  --line: rgba(255,255,255,0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(212,160,23,0.06), transparent), linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 6%;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px) saturate(120%);
+  position: sticky;
+  top: 12px;
+  margin: 8px 24px 0 24px;
+  border-radius: 12px;
+  z-index: 20;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--accent-strong);
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.02em;
+}
+.brand img.logo {
+  height: 44px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.brand .brand-text {
+  vertical-align: middle;
+  font-size: 1rem;
+  color: var(--accent-strong);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--muted);
+}
+
+nav a {
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  color: var(--text);
+  background: rgba(255,255,255,0.03);
+}
+
+.hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 6%;
+  background-image: linear-gradient(120deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?luxury-hotel,luxury');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-card {
+  max-width: 900px;
+  padding: 48px;
+  border-radius: 16px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px) saturate(140%);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  color: var(--text);
+}
+
+.hero-card p,
+.hero-card h1 {
+  margin: 0 0 18px 0;
+}
+
+.hero h1,
+.section h1,
+.section h2 {
+  margin: 0 0 16px;
+  line-height: 1.15;
+}
+
+.hero-card h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-family: 'Playfair Display', serif;
+  color: var(--text);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  margin-top: 12px;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 12px;
+  color: #0b0a09;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(212,160,23,0.12);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.section {
+  padding: 56px 6%;
+}
+
+.narrow {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card,
+.menu-list,
+.form {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.menu-list {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+}
+
+.menu-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-list div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.gallery-grid {
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.status {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+footer {
+  padding: 34px 6%;
+  text-align: center;
+  color: var(--muted);
+  margin-top: 40px;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero {
+    min-height: 62vh;
+  }
+}
