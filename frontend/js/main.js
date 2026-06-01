@@ -3,6 +3,25 @@ console.log("Main JS Loaded");
 
 const bookingForm = document.querySelector("#bookingForm");
 const bookingStatus = document.querySelector("#bookingStatus");
+const navToggle = document.querySelector(".nav-toggle");
+const siteHeader = document.querySelector(".site-header");
+const navLinks = document.querySelectorAll("nav a");
+
+if (navToggle && siteHeader) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = siteHeader.classList.toggle("nav-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (siteHeader.classList.contains("nav-open")) {
+        siteHeader.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+}
 
 console.log(bookingForm);
 
